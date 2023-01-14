@@ -40,13 +40,18 @@ int heighest_score = 0;
 void gameOver(int* score, Snake* snake){
         clearScreen();
 
-        printf("\t\t\t\tG\tA\tM\tE\t\tO\tV\tE\tR\t!\n");
+        // game over logo
+        printf("\t\t\t.__________________________________________________________________________________________.\n");
+        printf("\t\t\t|                                                                                          |\n");
+        printf("\t\t\t|\tG\tA\tM\tE\t\tO\tV\tE\tR\t!\t   |\n");
+        printf("\t\t\t|__________________________________________________________________________________________|\n");
+
         printf("\tYour Score: %d\n", *score);
         if(heighest_score < *score) heighest_score = *score;
         printf("\tHeighest Score: %d\n", heighest_score);
 
 
-        printf("\t\tpress any key to continue or q to quit: ");
+        printf("\n\t\tpress any key to RETRY or q to QUIT: ");
         char key = getch();
         if(key == 'q' || key == 'Q') exit(0);
         *score = 0;
