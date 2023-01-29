@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <unistd.h> // for sleep and getch
 
+// box dimensions
 #define height 25
 #define width 50
 
@@ -23,10 +24,11 @@ int getch(void)
 	return ch;
 }
 
-typedef struct{
+typedef struct snake{
     int x_position;
     int y_position;
-    char shape;
+    int shape;
+    struct snake* next;
 } Snake;
 
 typedef struct{
@@ -34,7 +36,7 @@ typedef struct{
     int y_position;
 } Fruit;
 
-int game_over = 0;
+int game_over = 0;  // 0: game NOT over. 1: game over
 int heighest_score = 0;
 
 void gameOver(int* score, Snake* snake){
@@ -62,7 +64,7 @@ Fruit putFruit(){
     fruit.x_position = rand()%(width-1);
     fruit.y_position = rand()%(height-1);
 
-    // we might get either of them 0, that would place fruit to the border
+    // we might get either of them at 0, that would place the fruit on the border
     while(fruit.x_position == 0) fruit.x_position = rand()%width;
     while(fruit.y_position == 0) fruit.y_position = rand()%height;
 
