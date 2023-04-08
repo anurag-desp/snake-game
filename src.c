@@ -89,7 +89,7 @@ void snakeShape(int shapes){
 }
 
 Fruit drawArea(Fruit fruit, Snake snake){
-    clearScreen();
+    // clearScreen();
     static int score = 0;
 
     for(int i = 0; i < height; i++){
@@ -178,6 +178,13 @@ Snake input(Snake snake){
     return snake;
 }
 
+void drawLogo(){
+    printf("\t\t\t ._________________________________________________________________________.\n");
+    printf("\t\t\t |                                                                         |\n");
+    printf("\t\t\t | S\tN\tA\tK\tE\t\tG\tA\tM\tE  |\n");
+    printf("\t\t\t |_________________________________________________________________________|\n\n\n");
+}
+
 int main(void){
 
     Fruit fruit;
@@ -190,8 +197,10 @@ int main(void){
 
     while(1)
     {
+        drawLogo();
         fruit = drawArea(fruit, snake);
         snake = input(snake);
+        clearScreen();
         sleep(0.2);
     }
 
