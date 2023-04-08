@@ -51,3 +51,23 @@
     - In the above program, you can notice that the function can kinda generate a random number using that stupid algorithm. This is roughly how to real rand() function works (for the sake of this explanation).
     - In this program, everytime you call the function you will get a random number, but everytime you run the code you get the same result. This is because we are always starting with 10 (seed). But if we everytime we give a different seed value, we will get a different result.
     - This is kinda how we use **srand** function. The most used seed value is **time()**.     
+
+---
+# Passing a multidimensional array as an argument to a function
+- for 1D array, it is quite simple.
+```
+    // syntax:
+    int passArray(int arr[]){
+        // body
+        return integer;
+    }
+```
+
+- but for multidimensional arrays, first dimension isn't needed to be specified but the subsequent dimensions have to be given
+```
+    // syntax:
+    int passArray(int arr[][50]){
+        // body;
+        return integer;
+    }
+```
