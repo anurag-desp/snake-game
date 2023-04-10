@@ -71,3 +71,6 @@
         return integer;
     }
 ```
+
+# Philosophical Learning
+- You just have to keep doing it and eventually, you'll figure it out.
