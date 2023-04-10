@@ -1,7 +1,7 @@
 #pragma once
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> // memory allocation
 #include <unistd.h> // for sleep
 #include "kbhit.h"
 #include "mysnake.h"

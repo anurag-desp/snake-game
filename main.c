@@ -1,5 +1,4 @@
 #include <stdio.h>
-// #include <stdlib.h>
 #include "mysnake.h"
 #include "snake.h"
 #include "myfruit.h"
