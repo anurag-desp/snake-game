@@ -128,7 +128,7 @@ Fruit drawArea(Fruit fruit, Snake snake){
     if(snake.y_position <= 0 || snake.y_position >= height-1 || snake.x_position <= 0 || snake.x_position >= width-1){
         game_over = 1;
         gameOver(&score, &snake);
-        main();
+        return fruit;
     }
 
     printf("\t\t Score: %d\n", score);
@@ -194,6 +194,7 @@ int main(void){
     snake.shape = 1;    // snake.shape(1: '~:', 2: ':~', 3: '!', 4: 'i')
 
     fruit = putFruit();
+    clearScreen();
 
     while(1)
     {
