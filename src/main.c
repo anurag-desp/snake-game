@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include "mysnake.h"
-#include "snake.h"
-#include "myfruit.h"
-#include "fruit.h"
+#include "../include/mysnake.h"
+#include "../include/snake.h"
+#include "../include/myfruit.h"
+#include "../include/fruit.h"
 
 int main(int argc, char** argv){
     Snake* snake = createSnake();
