@@ -249,14 +249,16 @@ int gameArea(Snake* head, Fruit fruit, char hit, int* score){
 }
 
 // NOT Used
-void destroySnake(Snake* snake){
-    Snake* temp = snake;
-    Snake* pre = NULL;
-    while(temp){
-        pre = temp;
-        temp = temp -> next;
-        free(pre);
-    }
+void destroySnake(Snake** snake)
+{  
+  Snake* current = *snake;
+  Snake* next;
+  while (current != NULL) {
+    next = current->next;
+    free(current);
+    current = next;
+  }
+  *snake = NULL;
 }
 
 void drawLogo(){
@@ -281,9 +283,12 @@ Snake* gameOver(int* score, Snake* snake){
 
     printf("\n\t\tpress any key to RETRY or q to QUIT: ");
     char key = getchar();
-    if(key == 'q' || key == 'Q') exit(0);
+    if(key == 'q' || key == 'Q')
+        exit(0);
+    printf("after quit\n");
     game_over = 0;
     *score = 0;
+    // destroySnake(&snake); // I don't know why this is causing problem in gameArea() upon retry!
     snake = createSnake();
     return snake;
 }

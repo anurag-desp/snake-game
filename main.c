@@ -38,11 +38,11 @@ int main(int argc, char** argv){
             snake = addBody(snake, hit);
         }
 
-        snake = moveSnake(snake, hit);
         if(kbhit()){
             hit = getchar();
             printf("HIT!\n");
         }
+        snake = moveSnake(snake, hit);
         
         if(score >= last_score){
             if(sleep_time > 50000)

@@ -28,3 +28,4 @@ int correctHit(char hit); // wheter the kbhit by user was the accepted hits(a, s
 void drawLogo();
 Snake* drawGameover(int* score, Snake* snake);
 int snakeEatsItself(Snake* head);
+void destroySnake(Snake** snake);

@@ -22,7 +22,7 @@ Fruit setFruit(){
 }
 
 void getFruit(Fruit f){
-    printf("fruit shape: %c", f.shape);
+    printf("fruit shape: %c\n", f.shape);
     printf("fruit x_position: %d\n", f.x_position);
     printf("fruit y_position: %d\n", f.y_position);
 }
