@@ -4,7 +4,7 @@
 #include "../include/myfruit.h"
 #include "../include/fruit.h"
 
-int main(int argc, char** argv){
+int main(int argc, char** argv) {
     Snake* snake = createSnake();
     int score = 0;
     int last_score = 0;
@@ -21,7 +21,7 @@ int main(int argc, char** argv){
     while(1){
         clearScreen();
         drawLogo();
-        usleep(1000);
+        // usleep(1000);
 
         if(game_over){
             snake = gameOver(&score, snake);
@@ -29,6 +29,7 @@ int main(int argc, char** argv){
             hit = 'd';
             sleep_time = 200000;
             usleep(10000);
+            continue;
         }
 
         fruit_eaten = gameArea(snake, fruit, hit, &score);
