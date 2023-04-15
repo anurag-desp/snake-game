@@ -93,7 +93,14 @@ void destroyList(Node* _head){
     _head = NULL;
 }
 
-// The Problem: Here, you are passing the value inside the head (which is an address of a structure called Node, in heap), so when you're freeing the nodes in the list, they are indeed getting freed, but the address of the head node remains inside the head(this head is the variable that was passed as argument in the destroy function) even if you do _head = NULL; (_head is a local variable to the function, so no changes to the callie part)
+// The Problem: Here, you are passing the value
+// inside the head (which is an address of a structure called Node, in heap)
+// So, when you're freeing the nodes in the list,
+// they are indeed getting freed, but the address
+// of the head node remains inside the 
+// head(this head is the variable that was passed as argument in the destroy function)
+// even if you do _head = NULL;
+// (_head is a local variable to the function, so no changes to the callie part)
 ```
 
 #### Code 2 (Good)
@@ -111,7 +118,9 @@ void destroyGood(Node** _head){
     *_head = NULL;
 }
 
-// Here, you are passing the head as reference. So, after you free all the nodes, you can simply update the head directly, without needing to return anything.
+// Here, you are passing the head as reference.
+// So, after you free all the nodes, you can simply update
+// the head directly, without needing to return anything.
 ```
 
 - This seems quite obvious, once I figured it out!
